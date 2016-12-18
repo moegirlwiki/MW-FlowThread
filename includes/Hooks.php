@@ -17,29 +17,40 @@ class Hooks {
 		return $ret;
 	}
 
-	public static function onBeforePageDisplay(\OutputPage &$output, \Skin &$skin) {
-		$title = $output->getTitle();
-
+	private static function allowComment(\Title $title) {
 		// Disallow commenting on pages without article id
 		if ($title->getArticleID() == 0) {
-			return true;
+			return false;
 		}
 
 		if ($title->isSpecialPage()) {
-			return true;
+			return false;
 		}
 
 		// These could be explicitly allowed in later version
 		if (!$title->canTalk()) {
-			return true;
+			return false;
 		}
 
 		if ($title->isTalkPage()) {
-			return true;
+			return false;
 		}
 
 		// No commenting on main page
 		if ($title->isMainPage()) {
+			return false;
+		}
+
+		// Blacklist several namespace
+		if (in_array($title->getNamespace(), self::getFilteredNamespace())) {
+			return false;
+		}
+
+		return true;
+	}
+
+	public static function onBeforePageDisplay(\OutputPage &$output, \Skin &$skin) {
+		if (!static::allowComment($output->getTitle())) {
 			return true;
 		}
 
@@ -50,11 +61,6 @@ class Hooks {
 
 		// Disable if not viewing
 		if ($skin->getRequest()->getVal('action', 'view') != 'view') {
-			return true;
-		}
-
-		// Blacklist several namespace
-		if (in_array($title->getNamespace(), self::getFilteredNamespace())) {
 			return true;
 		}
 
@@ -77,6 +83,43 @@ class Hooks {
 		global $wgFlowThreadConfig;
 		$output->addJsConfigVars(array('wgFlowThreadConfig' => $config));
 		$output->addModules('ext.flowthread');
+		return true;
+	}
+
+	public static function onBeforePageDisplayMobile(\OutputPage &$output, \Skin &$skin) {
+		if (!static::allowComment($output->getTitle())) {
+			return true;
+		}
+
+		// Do not display when printing
+		if ($output->isPrintable()) {
+			return true;
+		}
+
+		// Disable if not viewing
+		if ($skin->getRequest()->getVal('action', 'view') != 'view') {
+			return true;
+		}
+		
+		if ($output->getUser()->isAllowed('commentadmin-restricted')) {
+			$output->addJsConfigVars(array('commentadmin' => ''));
+		}
+
+		global $wgFlowThreadConfig;
+		$config = array(
+			'Avatar' => $wgFlowThreadConfig['Avatar'],
+			'AnonymousAvatar' => $wgFlowThreadConfig['AnonymousAvatar'],
+		);
+
+		if (\FlowThread\Post::canPost($output->getUser())) {
+			$output->addJsConfigVars(array('canpost' => ''));
+		} else {
+			$config['CantPostNotice'] = wfMessage('flowthread-ui-cantpost')->toString();
+		}
+
+		global $wgFlowThreadConfig;
+		$output->addJsConfigVars(array('wgFlowThreadConfig' => $config));
+		$output->addModules('ext.flowthread.mobile');
 		return true;
 	}
 

@@ -35,6 +35,9 @@
 		"BeforePageDisplay": [
 			"FlowThread\\Hooks::onBeforePageDisplay"
 		],
+		"BeforePageDisplayMobile": [
+			"FlowThread\\Hooks::onBeforePageDisplayMobile"
+		],
 		"LoadExtensionSchemaUpdates": [
 			"FlowThread\\Hooks::onLoadExtensionSchemaUpdates"
 		],
@@ -97,6 +100,36 @@
 				"flowthread-ui-popular",
 				"flowthread-ui-networkerror"
 			]
+		},
+		"ext.flowthread.mobile": {
+			"dependencies": [
+				"mediawiki.language",
+				"moment",
+				"mediawiki.user"
+			],
+			"scripts":[
+				"assets/common.js",
+				"assets/flowthread.js"
+			],
+			"styles":[
+				"assets/common.css",
+				"assets/mobile.css",
+				"assets/flowthread.css"
+			],
+			"messages": [
+				"flowthread-ui-reply",
+				"flowthread-ui-like",
+				"flowthread-ui-report",
+				"flowthread-ui-delete",
+				"flowthread-ui-usewikitext",
+				"flowthread-ui-preview",
+				"flowthread-ui-placeholder",
+				"flowthread-ui-submit",
+				"flowthread-ui-nocontent",
+				"flowthread-ui-popular",
+				"flowthread-ui-networkerror"
+			],
+			"targets": "mobile"
 		},
 		"ext.flowthread.manage": {
 			"dependencies": [
