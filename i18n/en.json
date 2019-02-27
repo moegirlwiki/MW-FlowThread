@@ -88,5 +88,8 @@
   "apihelp-flowthread-example-5": "Delete a comment.",
 
   "sidebar-section-extension": "Extension",
-  "sidebar-usercomments": "User Comments"
+  "sidebar-usercomments": "User Comments",
+
+  "flowthread-Articleblacklist": "# Texts in this list will be blocked when posted as comment for wikipages.\n# Syntax is as follows:\n#* Everything from a \"#\" character to the end of the line is a comment\n#* Every non-blank line is a regex fragment matching texts\n #<!-- leave this line exactly as it is --><pre>\n\n #</pre><!-- leave this line exactly as it is -->",
+  "flowthread-CommentControl":"sorry, you can not comment here"
 }

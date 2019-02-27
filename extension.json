@@ -29,7 +29,8 @@
     "FlowThread\\SpecialLink": "special/Link.php",
     "FlowThread\\EchoHooks": "echo/Hooks.php",
     "FlowThread\\EchoPresentationModel": "echo/PresentationModel.php",
-    "FlowThread\\EchoAlertPresentationModel": "echo/AlertPresentationModel.php"
+    "FlowThread\\EchoAlertPresentationModel": "echo/AlertPresentationModel.php",
+    "FlowThread\\CommentFilter": "includes/CommentFilter.php"
   },
   "Hooks": {
     "BeforePageDisplay": [
@@ -97,7 +98,8 @@
         "flowthread-ui-nocontent",
         "flowthread-ui-popular",
         "flowthread-ui-networkerror",
-        "flowthread-ui-useroptout"
+        "flowthread-ui-useroptout",
+        "flowthread-CommentControl"
       ]
     },
     "ext.flowthread.manage": {
