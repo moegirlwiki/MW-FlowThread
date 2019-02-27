@@ -1,3 +1,5 @@
+#NOTICE: This version have different doce & founction compare to the source! 
+
 # MW-FlowThread
 A commenting system for MediaWiki
 
