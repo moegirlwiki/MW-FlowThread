@@ -85,5 +85,8 @@
   "apihelp-flowthread-example-5": "删除一条评论。",
 
   "sidebar-section-extension": "扩展程序",
-  "sidebar-usercomments": "用户评论"
+  "sidebar-usercomments": "用户评论",
+  "flowthread-Articleblacklist": "# 在这个列表中的词条将禁止评论。\n# 语法如下：\n#* 任何由\"#\"字符开头至行尾的内容都算作注释\n#* 任何非空白行都是匹配文本的正则表达式片段\n #<!-- 请完整地保留此行 --><pre>\n\n #</pre><!-- 请完整地保留此行 -->",
+
+  "flowthread-CommentControl":"对不起此条目的评论功能未开放"
 }
