@@ -47,7 +47,8 @@
   "flowthread-ui-submit": "提交",
   "flowthread-ui-nocontent": "内容不能为空",
   "flowthread-ui-cantpost": "您没有权限发表评论，请查看站点关于评论的政策。",
-  "flowthread-ui-editblacklist": "编辑屏蔽列表",
+  "flowthread-ui-editblacklist": "编辑屏蔽字列表",
+  "flowthread-ui-editarticleblacklist": "编辑禁评列表",
   "flowthread-ui-networkerror": "无法连接到服务器。",
   "flowthread-ui-useroptout": "应用户要求，评论已经被关闭。请前往用户讨论页以留言。",
 
@@ -88,5 +89,6 @@
   "sidebar-usercomments": "用户评论",
   "flowthread-Articleblacklist": "# 在这个列表中的词条将禁止评论。\n# 语法如下：\n#* 任何由\"#\"字符开头至行尾的内容都算作注释\n#* 任何非空白行都是匹配文本的正则表达式片段\n #<!-- 请完整地保留此行 --><pre>\n\n #</pre><!-- 请完整地保留此行 -->",
 
-  "flowthread-CommentControl":"禁评"
+  "flowthread-CommentControl":"禁评",
+  "flowthread-CommentControl-error":"对不起，此条目禁止评论"
 }

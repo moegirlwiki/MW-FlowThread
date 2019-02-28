@@ -241,7 +241,15 @@ class API extends \ApiBase {
 					$postObject->status = Post::STATUS_SPAM;
 				}
 				$postObject->text = $text;
-				$postObject->post();
+				// check blacklist
+                $page_title =\WikiPage::newFromID($page)->getTitle()->getText();
+                $islegel = CommentFilter::validate($page_title);
+                if ($islegel["good"] == "yes") {
+                    $postObject->post();
+                }else{
+                    //show error message
+                    $this->dieUsage(wfMessage('flowthread-CommentControl-error')->toString());
+                }
 
 				if (!$filterResult['good']) {
 					global $wgTriggerFlowThreadHooks;
