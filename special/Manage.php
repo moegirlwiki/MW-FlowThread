@@ -190,18 +190,22 @@ class SpecialManage extends \SpecialPage
         $html = \Xml::tags('form', array('action' => $wgScript, 'method' => 'get'), $html);
 
         if ($this->getUser()->isAllowed('editinterface')) {
-            $html .= \Xml::tags('small', array('style' => 'float:right;'), \Linker::linkKnown(
+            $blacklist = \Linker::linkKnown(
                 \Title::newFromText('MediaWiki:Flowthread-blacklist'),
                 $this->msg('flowthread-ui-editblacklist')
-            ));
+            );
+            $new_blacklist = "<a target='_blank' " . substr($blacklist, 2, strlen($blacklist));
+            $html .= \Xml::tags('small', array('style' => 'float:right;'),$new_blacklist);
         }
 
 
         if ($this->getUser()->isAllowed('editinterface')) {
-            $html .= \Xml::tags('small', array('style' => 'float:right;margin-right:20px;'), \Linker::linkKnown(
+            $articleblacklist = \Linker::linkKnown(
                 \Title::newFromText('MediaWiki:Flowthread-Articleblacklist'),
                 $this->msg('flowthread-ui-editarticleblacklist')
-            ));
+            );
+            $new_articleblacklist = "<a target='_blank' " . substr($articleblacklist, 2, strlen($articleblacklist));
+            $html .= \Xml::tags('small', array('style' => 'float:right;margin-right:20px;'), $new_articleblacklist);
         }
 
 
