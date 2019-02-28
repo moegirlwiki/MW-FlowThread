@@ -198,9 +198,9 @@ class SpecialManage extends \SpecialPage
 
 
         if ($this->getUser()->isAllowed('editinterface')) {
-            $html .= \Xml::tags('small', array('style' => 'float:right;'), \Linker::linkKnown(
+            $html .= \Xml::tags('small', array('style' => 'float:right;margin-right:20px;'), \Linker::linkKnown(
                 \Title::newFromText('MediaWiki:Flowthread-Articleblacklist'),
-                $this->msg('flowthread-ui-editblacklist')
+                $this->msg('flowthread-ui-editarticleblacklist')
             ));
         }
 

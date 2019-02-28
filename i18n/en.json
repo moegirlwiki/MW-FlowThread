@@ -48,6 +48,7 @@
   "flowthread-ui-nocontent": "Content cannot be empty",
   "flowthread-ui-cantpost": "You do not have right to post. Please check site's policy about commenting.",
   "flowthread-ui-editblacklist": "Edit Blacklist",
+  "flowthread-ui-editarticleblacklist": "Edit ArticleBlacklist",
   "flowthread-ui-networkerror": "Cannot connect to the server.",
   "flowthread-ui-useroptout": "Comments are disabled upon user request. Please go to discussion page instead.",
 
@@ -91,5 +92,6 @@
   "sidebar-usercomments": "User Comments",
 
   "flowthread-Articleblacklist": "# Texts in this list will be blocked when posted as comment for wikipages.\n# Syntax is as follows:\n#* Everything from a \"#\" character to the end of the line is a comment\n#* Every non-blank line is a regex fragment matching texts\n #<!-- leave this line exactly as it is --><pre>\n\n #</pre><!-- leave this line exactly as it is -->",
-  "flowthread-CommentControl":"Sorry, The comments section is closed in this article."
+  "flowthread-CommentControl":"Sorry, The comments section is closed in this article.",
+  "flowthread-CommentControl-error":"Sorry, The comments section is closed in this article."
 }
