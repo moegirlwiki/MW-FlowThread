@@ -75,7 +75,15 @@ class API extends \ApiBase {
 		if (!$page) {
 			$this->dieNoParam('pageid');
 		}
-		$this->getResult()->addValue(null, $this->getModuleName(), $this->fetchPosts($page));
+
+		//check blacklist
+        $page_title =\WikiPage::newFromID($page)->getTitle()->getText();
+        $islegel = CommentFilter::validate($page_title);
+        if ($islegel["good"] == "yes") {
+            $this->getResult()->addValue(null, $this->getModuleName(), $this->fetchPosts($page));
+        }else{
+            $this->dieUsage(wfMessage('flowthread-FetchCommonList-error')->toString());
+        }
 	}
 
 	public function execute() {

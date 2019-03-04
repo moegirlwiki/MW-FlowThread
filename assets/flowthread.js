@@ -96,6 +96,10 @@ Thread.sendComment = function(postid, text, wikitext) {
 }
 
 function reloadComments(offset) {
+  //check blacklist
+    if(mw.config.exists("cancomment")){
+      return;
+    }
   offset = offset || 0;
   var api = new mw.Api();
   api.get({
