@@ -90,5 +90,6 @@
   "flowthread-Articleblacklist": "# 在这个列表中的词条将禁止评论。\n# 语法如下：\n#* 任何由\"#\"字符开头至行尾的内容都算作注释\n#* 任何非空白行都是匹配文本的正则表达式片段\n #<!-- 请完整地保留此行 --><pre>\n\n #</pre><!-- 请完整地保留此行 -->",
 
   "flowthread-CommentControl":"禁评",
-  "flowthread-CommentControl-error":"对不起，此条目禁止评论"
+  "flowthread-CommentControl-error":"对不起，此条目禁止评论",
+  "flowthread-FetchCommonList-error":"无法获取此条目的评论，次条目禁止评论"
 }
