@@ -99,7 +99,9 @@
         "flowthread-ui-popular",
         "flowthread-ui-networkerror",
         "flowthread-ui-useroptout",
-        "flowthread-CommentControl"
+        "flowthread-CommentControl",
+        "flowthread-WordCountLimit",
+        "flowthread-WordCountLimit-msg"
       ]
     },
     "ext.flowthread.manage": {
