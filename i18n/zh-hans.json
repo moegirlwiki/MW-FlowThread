@@ -91,5 +91,7 @@
 
   "flowthread-CommentControl":"禁评",
   "flowthread-CommentControl-error":"对不起，此条目禁止评论",
-  "flowthread-FetchCommonList-error":"无法获取此条目的评论，此条目禁止评论"
+  "flowthread-FetchCommonList-error":"无法获取此条目的评论，此条目禁止评论",
+  "flowthread-WordCountLimit":"2000",
+  "flowthread-WordCountLimit-msg":"内容长度限制:{0}/{1}"
 }

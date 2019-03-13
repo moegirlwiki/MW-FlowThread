@@ -85,7 +85,8 @@ Thread.sendComment = function(postid, text, wikitext) {
     content: text,
     wikitext: wikitext
   };
-  api.get(req).done(reloadComments).fail(function(error, obj) {
+  //change request type to post
+  api.post(req).done(reloadComments).fail(function(error, obj) {
     if (obj.error)
       showMsgDialog(obj.error.info);
     else if (error === 'http')
@@ -102,7 +103,8 @@ function reloadComments(offset) {
     }
   offset = offset || 0;
   var api = new mw.Api();
-  api.get({
+    //change request type to post
+  api.post({
     action: 'flowthread',
     type: 'list',
     pageid: mw.config.get('wgArticleId'),

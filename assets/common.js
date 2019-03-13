@@ -162,11 +162,12 @@ function ReplyBox() {
         + '<img src="' + getAvatar(mw.user.getId(), mw.user.id()) + '"></img>'
         + '</div>'
         + '<div class="comment-body">'
-        + '<textarea placeholder="' + mw.msg('flowthread-ui-placeholder') + '"></textarea>'
+        + '<textarea id="commentcontent"  maxlength="'+mw.msg('flowthread-WordCountLimit')+'"  placeholder="' + mw.msg('flowthread-ui-placeholder') + '"></textarea>'
         + '<div class="comment-preview" style="display:none;"></div>'
         + '<div class="comment-toolbar">'
         + '<button class="flowthread-btn flowthread-btn-wikitext' + (localStorage.flowthread_use_wikitext === 'true' ? ' on' : '') + '" title="' + mw.msg('flowthread-ui-usewikitext') + '"></button>'
-        + '<button class="flowthread-btn flowthread-btn-preview" title="' + mw.msg('flowthread-ui-preview') + '"></button>'
+        + '<button class="flowthread-btn flowthread-btn-preview" title="' + mw.msg('flowthread-ui-preview') + '"></button>' +
+        '<span id="commentlimitmsg"  class="comment-lengthcount">长度限制：0/'+mw.msg('flowthread-WordCountLimit')+'</span>'
         + '<button class="comment-submit">' + mw.msg('flowthread-ui-submit') + '</button>'
         + '</div>'
         + '</div></div>';
@@ -194,6 +195,12 @@ function ReplyBox() {
     object.find('textarea').keyup(function (e) {
         if (e.ctrlKey && e.which === 13) object.find('.comment-submit').click();
         self.pack();
+        //display word count limit
+        var localLength=$("#commentcontent").val().length;
+        var limitLength = mw.msg('flowthread-WordCountLimit');
+        var limitmsg = mw.msg('flowthread-WordCountLimit-msg');
+        $("#commentlimitmsg").html(limitmsg.replace('{0}',localLength).replace('{1}',limitLength));
+
     });
 
     object.find('.flowthread-btn-preview').click(function () {

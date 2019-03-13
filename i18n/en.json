@@ -94,5 +94,7 @@
   "flowthread-Articleblacklist": "# Texts in this list will be blocked when posted as comment for wikipages.\n# Syntax is as follows:\n#* Everything from a \"#\" character to the end of the line is a comment\n#* Every non-blank line is a regex fragment matching texts\n #<!-- leave this line exactly as it is --><pre>\n\n #</pre><!-- leave this line exactly as it is -->",
   "flowthread-CommentControl":"Sorry, The comments section is closed in this article.",
   "flowthread-CommentControl-error":"Sorry, The comments section is closed in this article.",
-  "flowthread-FetchCommonList-error":"Can not fetch comments, The comments section is closed in this article."
+  "flowthread-FetchCommonList-error":"Can not fetch comments, The comments section is closed in this article.",
+  "flowthread-WordCountLimit":"2000",
+  "flowthread-WordCountLimit-msg":"Length Limit:{0}/{1}"
 }

@@ -67,6 +67,26 @@
     border-radius: 0px 0px 3px 0px;
     outline: 0;
 }
+.comment-lengthcount {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: absolute;
+    right: 99px;
+    top: -1px;
+    height: 30px;
+    text-align: center;
+    text-shadow: 0px 1px 0px #FFF;
+    color: #555;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #CCC;
+    background-color: white;
+    transition: all 0.3s ease-out;
+    box-shadow: 0px 0px 0px white inset, 0px 0px 0px white;
+    margin: 0px;
+    padding: 0px 10px;
+    border-radius: 0px 0px 3px 0px;
+    outline: 0;
+}
 
 .comment-submit:hover {
     box-shadow: 0px 0px 0px white inset, 0 5px 11px 0 rgba(0,0,0,0.18);
