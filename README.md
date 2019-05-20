@@ -1,4 +1,4 @@
-#NOTICE: This version have different doce & founction compare to the source! 
+#NOTICE: This version have different doc & founction compare to the source! 
 
 # MW-FlowThread
 A commenting system for MediaWiki
